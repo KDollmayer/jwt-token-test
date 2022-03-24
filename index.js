@@ -5,6 +5,7 @@ const app = express()
 const PORT = 3000
 
 const authRoute =  require('./routes/auth')
+const postRoute =  require('./routes/posts')
 
 
 
@@ -20,5 +21,7 @@ app.use(express.json())
 
 
 app.use('/api/user', authRoute)
+app.use('/api/posts', postRoute)
+
 
 app.listen(PORT, () => console.log("Server up"))
